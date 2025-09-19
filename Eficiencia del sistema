@@ -1,0 +1,18 @@
+3. Eficiencia del sistema
+
+El sistema optimiza la gestión de pedidos:
+
+Cola de Prioridades → Los pedidos VIP/urgentes se atienden antes que los demás.
+
+Colas y Pilas → Permiten gestionar diferentes escenarios de cocina (FIFO para orden normal, LIFO para pedidos rápidos).
+
+Lista de Tareas → Mantiene registro de todas las órdenes, útil para administración.
+
+GUI → Mejora la interacción del usuario al visualizar pedidos en pantalla.
+
+Ejemplo (ColaPrioridades.java):
+
+// Cola de prioridad: primero se atienden pedidos VIP o urgentes
+PriorityQueue<Tarea> colaPrioridad = new PriorityQueue<>(
+    (t1, t2) -> Integer.compare(t2.getPrioridad(), t1.getPrioridad())
+);
