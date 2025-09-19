@@ -1,57 +1,75 @@
-# 🍽️ Proyecto Final - Estructura de Datos  
-**Materia:** LSTI2310  
-**Alumno:** [Tu Nombre]  
+#  Proyecto Final - Estructura de Datos  
+**Materia:** Estructura de datos  
+**Alumnos:** [jesus andre flores garcia,jesus roberto,jordan rykelme,]  
 **Profesor:** [Nombre del profesor]  
 **Fecha:** [Mes, Año]  
 
 ---
 
-## 📖 Descripción General
-Este proyecto consiste en un sistema de **gestión de tareas para un restaurante**, desarrollado en **Java**.  
-Se aplican diferentes **estructuras de datos avanzadas (listas, pilas, colas y colas de prioridad)** para organizar, administrar y procesar tareas de manera eficiente.  
+ Descripción General
+Este proyecto implementa un sistema de **gestión de pedidos para un restaurante de hamburguesas**, desarrollado en **Java**.  
 
-El programa cuenta con dos formas de ejecución:  
-- **Consola:** interacción básica mostrando la lógica de las estructuras.  
-- **Interfaz Gráfica (GUI):** mediante `RestauranteAppGUI.java`, que permite al usuario interactuar con el sistema de manera más visual.  
+Se utilizan **estructuras de datos avanzadas (listas, pilas, colas y colas de prioridad)** para organizar y procesar las órdenes de clientes de forma eficiente.  
+Además, el sistema cuenta con una **interfaz gráfica (GUI)** para facilitar la interacción del usuario.  
+
+---
+
+##  Caso de Uso: Restaurante de Hamburguesas  
+
+Un **restaurante de hamburguesas** recibe constantemente pedidos. El sistema organiza las órdenes de los clientes y las envía a cocina en el orden más eficiente posible.  
+
+### 🔹 Escenario General
+1. Los clientes llegan y ordenan hamburguesas, papas, bebidas y combos.  
+2. Cada orden se convierte en una **tarea** dentro del sistema.  
+3. El restaurante debe decidir **cómo procesar cada tarea**:  
+   - **ColaTareas (FIFO):** las órdenes se atienden en orden de llegada.  
+   - **PilaTareas (LIFO):** la última orden ingresada se procesa primero (ejemplo: cuando un cocinero se especializa en pedidos rápidos).  
+   - **ColaPrioridades:** si llega un pedido **VIP o urgente**, se procesa antes que las demás.  
+4. Todas las órdenes (procesadas o no) se almacenan en una **ListaTareas** para el control y seguimiento.  
+
+### 🔹 Ejemplo de Pedidos
+- Cliente 1: 🍔 Hamburguesa sencilla + 🍟 papas.  
+- Cliente 2: 🍔 Doble hamburguesa + 🥤 refresco.  
+- Cliente 3: 🍔 Hamburguesa con queso (URGENTE VIP).  
+- Cliente 4: 🍔 Combo familiar (3 hamburguesas + 3 bebidas + 2 papas).  
+
+### 🔹 Flujo con estructuras
+- **Cola FIFO:**  
+  - Orden de atención → Cliente 1 → Cliente 2 → Cliente 3 → Cliente 4.  
+- **Cola de Prioridad:**  
+  - El pedido del Cliente 3 (VIP) se atiende primero, luego siguen los demás.  
+- **Pila LIFO:**  
+  - El último pedido (Cliente 4) se atiende antes que los anteriores.  
+- **Lista de Tareas:**  
+  - Se guardan todos los pedidos, sin importar el orden de ejecución.  
+
+📌 Gracias a este modelo, el restaurante puede **adaptarse a diferentes escenarios de atención**, garantizando rapidez y flexibilidad.  
 
 ---
 
 ## 🧩 1. Implementación de estructuras  
-De acuerdo con la rúbrica, se utilizan **todas las estructuras y algoritmos avanzados necesarios para optimizar operaciones**:  
+Se utilizaron las siguientes clases para cumplir con los requisitos del sistema:  
 
-- **ListaTareas.java**  
-  - Implementa una lista dinámica para almacenar y recorrer todas las tareas.  
-- **PilaTareas.java**  
-  - Gestiona tareas en un esquema **LIFO (Last In, First Out)**.  
-  - Ejemplo: si varias órdenes entran al mismo tiempo, la última puede resolverse primero.  
-- **ColaTareas.java**  
-  - Gestiona tareas en un esquema **FIFO (First In, First Out)**.  
-  - Ejemplo: atender clientes en orden de llegada.  
-- **ColaPrioridades.java**  
-  - Implementa una **cola de prioridad**, donde las tareas urgentes se procesan antes que las normales.  
-- **Empleado.java** y **Tarea.java**  
-  - Modelan los elementos principales del sistema: trabajadores y actividades del restaurante.  
-- **RestaurantePro.java** y **Main.java**  
-  - Controlan la lógica principal y la ejecución del programa.  
-- **RestauranteAppGUI.java**  
-  - Permite la interacción visual con botones y cuadros de texto para agregar, procesar y mostrar tareas.  
-
-📌 Todas estas estructuras trabajan juntas para simular la gestión real de un restaurante.  
+- **ListaTareas.java** → Maneja todas las órdenes en una lista dinámica.  
+- **PilaTareas.java** → Procesa tareas en orden LIFO.  
+- **ColaTareas.java** → Procesa tareas en orden FIFO.  
+- **ColaPrioridades.java** → Atiende primero las órdenes más importantes.  
+- **Empleado.java** y **Tarea.java** → Modelan la información de los empleados y pedidos.  
+- **RestauranteAppGUI.java** → Proporciona una interfaz gráfica para interactuar con el sistema.  
+- **Main.java** y **RestaurantePro.java** → Controlan la ejecución principal.  
 
 ---
 
 ## 📑 2. Claridad y documentación  
-El proyecto está **bien documentado** y presenta claridad en el uso de las estructuras:  
+- El código incluye **comentarios explicativos** en las clases y métodos.  
+- La separación en **archivos independientes** facilita la comprensión.  
+- Este **README.md** documenta el caso de uso, estructuras y ejecución del sistema.  
 
-- ✅ Cada clase y método incluye **comentarios** explicativos.  
-- ✅ La **separación en archivos** facilita la lectura y mantenimiento.  
-- ✅ Este **README.md** documenta la arquitectura, ejecución y finalidad del sistema.  
-
-Ejemplo de documentación dentro del código (`ColaTareas.java`):  
+Ejemplo (`ColaTareas.java`):  
 
 ```java
-// Clase que implementa una cola de tareas (FIFO)
-// Permite encolar y desencolar tareas en orden de llegada
+// Cola de tareas (FIFO)
+// Permite encolar pedidos en orden de llegada
 public class ColaTareas {
     private Queue<Tarea> cola;
 
@@ -59,13 +77,14 @@ public class ColaTareas {
         cola = new LinkedList<>();
     }
 
-    // Agrega una tarea al final de la cola
+    // Agregar pedido a la cola
     public void encolar(Tarea tarea) {
         cola.add(tarea);
     }
 
-    // Elimina y retorna la primera tarea en la cola
+    // Procesar el primer pedido en la cola
     public Tarea desencolar() {
         return cola.poll();
     }
 }
+
