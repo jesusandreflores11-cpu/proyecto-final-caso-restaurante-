@@ -18,7 +18,7 @@ Además, el sistema cuenta con una **interfaz gráfica (GUI)** para facilitar la
 
 Un **restaurante de hamburguesas** recibe constantemente pedidos. El sistema organiza las órdenes de los clientes y las envía a cocina en el orden más eficiente posible.  
 
-### 🔹 Escenario General
+###  Escenario General
 1. Los clientes llegan y ordenan hamburguesas, papas, bebidas y combos.  
 2. Cada orden se convierte en una **tarea** dentro del sistema.  
 3. El restaurante debe decidir **cómo procesar cada tarea**:  
@@ -27,13 +27,13 @@ Un **restaurante de hamburguesas** recibe constantemente pedidos. El sistema org
    - **ColaPrioridades:** si llega un pedido **VIP o urgente**, se procesa antes que las demás.  
 4. Todas las órdenes (procesadas o no) se almacenan en una **ListaTareas** para el control y seguimiento.  
 
-### 🔹 Ejemplo de Pedidos
-- Cliente 1: 🍔 Hamburguesa sencilla + 🍟 papas.  
-- Cliente 2: 🍔 Doble hamburguesa + 🥤 refresco.  
-- Cliente 3: 🍔 Hamburguesa con queso (URGENTE VIP).  
-- Cliente 4: 🍔 Combo familiar (3 hamburguesas + 3 bebidas + 2 papas).  
+###  Ejemplo de Pedidos
+- Cliente 1:  Hamburguesa sencilla +  papas.  
+- Cliente 2:  Doble hamburguesa +  refresco.  
+- Cliente 3:  Hamburguesa con queso (URGENTE VIP).  
+- Cliente 4:  Combo familiar (3 hamburguesas + 3 bebidas + 2 papas).  
 
-### 🔹 Flujo con estructuras
+###  Flujo con estructuras
 - **Cola FIFO:**  
   - Orden de atención → Cliente 1 → Cliente 2 → Cliente 3 → Cliente 4.  
 - **Cola de Prioridad:**  
@@ -43,11 +43,11 @@ Un **restaurante de hamburguesas** recibe constantemente pedidos. El sistema org
 - **Lista de Tareas:**  
   - Se guardan todos los pedidos, sin importar el orden de ejecución.  
 
-📌 Gracias a este modelo, el restaurante puede **adaptarse a diferentes escenarios de atención**, garantizando rapidez y flexibilidad.  
+ Gracias a este modelo, el restaurante puede **adaptarse a diferentes escenarios de atención**, garantizando rapidez y flexibilidad.  
 
 ---
 
-## 🧩 1. Implementación de estructuras  
+##  1. Implementación de estructuras  
 Se utilizaron las siguientes clases para cumplir con los requisitos del sistema:  
 
 - **ListaTareas.java** → Maneja todas las órdenes en una lista dinámica.  
@@ -60,7 +60,7 @@ Se utilizaron las siguientes clases para cumplir con los requisitos del sistema:
 
 ---
 
-## 📑 2. Claridad y documentación  
+##  2. Claridad y documentación  
 - El código incluye **comentarios explicativos** en las clases y métodos.  
 - La separación en **archivos independientes** facilita la comprensión.  
 - Este **README.md** documenta el caso de uso, estructuras y ejecución del sistema.  
