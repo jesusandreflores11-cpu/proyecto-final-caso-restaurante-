@@ -1,8 +1,8 @@
 #  Proyecto Final - Estructura de Datos  
 **Materia:** Estructura de datos  
 **Alumnos:** [jesus andre flores garcia,jesus roberto,jordan rykelme,]  
-**Profesor:** [Nombre del profesor]  
-**Fecha:** [Mes, Año]  
+**Profesor:** []  
+**Fecha:** [septiembre 2025]  
 
 ---
 
